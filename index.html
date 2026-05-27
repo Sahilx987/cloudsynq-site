@@ -1841,29 +1841,28 @@
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    fetch('/api/contact', {
+    fetch('https://formspree.io/f/mnjroevp', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({ name, email, phone, service, message: msg }),
     })
       .then(res => res.json().then(d => ({ ok: res.ok, data: d })))
       .then(({ ok, data }) => {
         if (!ok) {
-          const errMsg = data?.fields ? Object.values(data.fields).join(' ') : (data?.error || 'Something went wrong.');
           btn.textContent = 'Send Message →';
           btn.disabled = false;
-          alert(errMsg);
+          alert(data?.error || 'Something went wrong. Please try again.');
           return;
         }
         btn.style.display = 'none';
         const detail = document.getElementById('successDetail');
-        detail.textContent = data.detail || `We'll reach out to ${email}${phone ? ' or ' + phone : ''} within 24 hours.`;
+        detail.textContent = `We'll reach out to ${email}${phone ? ' or ' + phone : ''} within 24 hours.`;
         document.getElementById('successMsg').style.display = 'block';
       })
       .catch(() => {
         btn.textContent = 'Send Message →';
         btn.disabled = false;
-        alert('Could not reach the server. Please try again later.');
+        alert('Network error. Please try again later.');
       });
   }
 
