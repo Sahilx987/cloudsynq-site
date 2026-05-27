@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloudynq — Enterprise Web &amp; Cloud Infrastructure</title>
-<meta name="description" content="Cloudynq delivers enterprise-grade websites, cloud deployment, VPS/Linux, monitoring and automation for businesses across India. Based in Delhi NCR.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Cloudsynq — Enterprise Web &amp; Cloud Infrastructure</title>
+<meta name="description" content="Cloudsynq delivers enterprise-grade websites, cloud deployment, VPS/Linux, monitoring and automation for businesses across India. Based in Delhi NCR.">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -117,6 +118,27 @@
   .nav-links a:hover { color: var(--text); }
 
   .nav-btns { display: flex; gap: 10px; align-items: center; }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: 0.2s;
+  }
+  .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .menu-toggle.open span:nth-child(2) { opacity: 0; }
+  .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
   .btn-ghost {
     font-size: 13px;
@@ -1110,7 +1132,30 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 0 20px; }
-    .nav-links { display: none; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      flex-direction: column;
+      padding: 20px;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a {
+      display: block;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links li:last-child a { border-bottom: none; }
+    .nav-btns { display: none; }
+    .menu-toggle { display: flex; }
 
     #hero {
       grid-template-columns: 1fr;
@@ -1178,7 +1223,7 @@
       <circle cx="11" cy="29" r="1.8" fill="#BFDBFE"/>
     </svg>
     <span>
-      <span class="logo-word">cloud<em>ynq</em></span>
+      <span class="logo-word">cloud<em>synq</em></span>
       <span class="logo-tagline">Enterprise Web &amp; Cloud</span>
     </span>
   </a>
@@ -1196,6 +1241,9 @@
     <a href="#contact" class="btn-ghost">Contact</a>
     <a href="#contact" class="btn-blue">Request consultation</a>
   </div>
+  <button class="menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ── HERO ── -->
@@ -1207,7 +1255,7 @@
     </div>
     <h1>Reliable Web<br>Infrastructure<br>for <em>Modern Businesses</em></h1>
     <p class="hero-desc">
-      Cloudynq delivers production-grade websites, cloud infrastructure, and DevOps automation
+      Cloudsynq delivers production-grade websites, cloud infrastructure, and DevOps automation
       for startups and growing businesses — with the reliability your operations depend on.
     </p>
     <div class="hero-cta">
@@ -1216,14 +1264,14 @@
     </div>
     <div class="hero-trust">
       <p class="hero-trust-text">
-        <strong>Cloudynq</strong>
+        <strong>Cloudsynq</strong>
         Web systems, AWS &amp; VPS deployment, monitoring, and automation — built for business continuity and scale.
       </p>
     </div>
   </div>
 
   <div class="hero-img-wrap">
-    <img class="site-img" data-seed="cloudynq-hero" src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=900&h=675&dpr=1" alt="Enterprise technology workspace" width="900" height="675" loading="eager" decoding="async" referrerpolicy="no-referrer">
+    <img class="site-img" data-seed="cloudsynq-hero" src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=900&h=675&dpr=1" alt="Enterprise technology workspace" width="900" height="675" loading="eager" decoding="async" referrerpolicy="no-referrer">
     <div class="hero-img-badge">
       <div class="badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <div>
@@ -1238,10 +1286,10 @@
 <section id="about">
   <div class="section-wrap">
     <div class="reveal">
-      <div class="section-tag">About Cloudynq</div>
+      <div class="section-tag">About Cloudsynq</div>
       <h2 class="section-h">Enterprise web &amp; cloud<br>for growing businesses</h2>
       <p class="section-sub" style="margin-bottom: 40px;">
-        Cloudynq is a technology practice focused on dependable digital infrastructure — from customer-facing websites to secure server environments and operational automation.
+        Cloudsynq is a technology practice focused on dependable digital infrastructure — from customer-facing websites to secure server environments and operational automation.
       </p>
     </div>
 
@@ -1255,14 +1303,14 @@
     <div class="about-split reveal">
       <div class="about-copy">
         <p>
-          Organizations partner with Cloudynq when they need systems that work under real business pressure — fast load times, secure hosting, documented deployments, and ongoing visibility into server health.
+          Organizations partner with Cloudsynq when they need systems that work under real business pressure — fast load times, secure hosting, documented deployments, and ongoing visibility into server health.
         </p>
         <p>
           Engagements are structured for clarity: defined scope, milestone delivery, and production standards aligned with modern DevOps practices including AWS, Linux, Grafana, Zabbix, and automated CI/CD.
         </p>
       </div>
       <div class="about-visual">
-        <img class="site-img" data-seed="cloudynq-about" src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=720&h=495&dpr=1" alt="Cloudynq enterprise technology environment" width="720" height="495" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        <img class="site-img" data-seed="cloudsynq-about" src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=720&h=495&dpr=1" alt="Cloudsynq enterprise technology environment" width="720" height="495" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       </div>
     </div>
 
@@ -1309,7 +1357,7 @@
     <div class="cards-grid">
       <div class="card reveal">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-web" src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Business website design" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-web" src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Business website design" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
         <div class="card-title">Business Websites</div>
@@ -1318,7 +1366,7 @@
 
       <div class="card reveal reveal-delay-1">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-cloud" src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Cloud infrastructure" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-cloud" src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Cloud infrastructure" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-icon-wrap"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div>
         <div class="card-title">Cloud Deployment</div>
@@ -1327,7 +1375,7 @@
 
       <div class="card reveal reveal-delay-2">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-monitor" src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Monitoring dashboard" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-monitor" src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Monitoring dashboard" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-icon-wrap"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
         <div class="card-title">Server Monitoring</div>
@@ -1336,7 +1384,7 @@
 
       <div class="card reveal">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-vps" src="https://images.pexels.com/photos/17489157/pexels-photo-17489157.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Linux server infrastructure" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-vps" src="https://images.pexels.com/photos/17489157/pexels-photo-17489157.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Linux server infrastructure" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-icon-wrap"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
         <div class="card-title">VPS &amp; Linux Setup</div>
@@ -1345,7 +1393,7 @@
 
       <div class="card reveal reveal-delay-1">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-auto" src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Automation and DevOps" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-auto" src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Automation and DevOps" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
         <div class="card-title">Automation Scripts</div>
@@ -1354,7 +1402,7 @@
 
       <div class="card reveal reveal-delay-2">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-api" src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="API integrations" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-api" src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="API integrations" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-icon-wrap"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
         <div class="card-title">API Integrations</div>
@@ -1376,7 +1424,7 @@
     <div class="cards-grid">
       <div class="card reveal">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-proj-vps" src="https://images.pexels.com/photos/17489157/pexels-photo-17489157.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Linux VPS deployment" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-proj-vps" src="https://images.pexels.com/photos/17489157/pexels-photo-17489157.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Linux VPS deployment" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-title">Linux VPS Deployment</div>
         <div class="card-desc">
@@ -1386,7 +1434,7 @@
 
       <div class="card reveal reveal-delay-1">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-proj-web" src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Business landing page" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-proj-web" src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Business landing page" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-title">Business Landing Page</div>
         <div class="card-desc">
@@ -1396,7 +1444,7 @@
 
       <div class="card reveal reveal-delay-2">
         <div class="card-img">
-          <img class="site-img" data-seed="cloudynq-proj-mon" src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Server monitoring dashboard" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-proj-mon" src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&dpr=1" alt="Server monitoring dashboard" width="600" height="340" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="card-title">Server Monitoring Dashboard</div>
         <div class="card-desc">
@@ -1411,7 +1459,7 @@
 <section id="how">
   <div class="how-inner">
     <div class="how-img reveal">
-      <img class="site-img" data-seed="cloudynq-how" src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" alt="Enterprise project planning" width="800" height="600" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      <img class="site-img" data-seed="cloudsynq-how" src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" alt="Enterprise project planning" width="800" height="600" loading="lazy" decoding="async" referrerpolicy="no-referrer">
     </div>
 
     <div class="reveal reveal-delay-1">
@@ -1424,7 +1472,7 @@
         <div class="step-num">1</div>
         <div>
           <div class="step-title">Discovery &amp; requirements</div>
-          <div class="step-desc">Share your objectives via the contact form or WhatsApp. Cloudynq aligns on scope, timeline, and technical requirements.</div>
+          <div class="step-desc">Share your objectives via the contact form or WhatsApp. Cloudsynq aligns on scope, timeline, and technical requirements.</div>
         </div>
       </div>
 
@@ -1453,12 +1501,12 @@
     <div class="reveal">
       <div class="section-tag">Architecture</div>
       <h2 class="section-h">Production architecture</h2>
-      <p class="section-sub">Standard Cloudynq deployment stack — optimized for performance, security, and operational control.</p>
+      <p class="section-sub">Standard Cloudsynq deployment stack — optimized for performance, security, and operational control.</p>
     </div>
 
     <div class="arch-split reveal">
       <div class="arch-img">
-        <img class="site-img" data-seed="cloudynq-arch" src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=700&h=525&dpr=1" alt="Cloud infrastructure architecture" width="700" height="525" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        <img class="site-img" data-seed="cloudsynq-arch" src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=700&h=525&dpr=1" alt="Cloud infrastructure architecture" width="700" height="525" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       </div>
       <div class="stack-flow">
         <div class="stack-step"><span class="step-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></span> Visitor opens your site in a browser</div>
@@ -1487,7 +1535,7 @@
     <div class="case-grid">
       <div class="case-card reveal">
         <div class="case-img">
-          <img class="site-img" data-seed="cloudynq-case1" src="https://images.pexels.com/photos/17489157/pexels-photo-17489157.jpeg?auto=compress&cs=tinysrgb&w=560&h=336&dpr=1" alt="VPS optimization" width="560" height="336" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-case1" src="https://images.pexels.com/photos/17489157/pexels-photo-17489157.jpeg?auto=compress&cs=tinysrgb&w=560&h=336&dpr=1" alt="VPS optimization" width="560" height="336" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="case-tag">Case Study</div>
         <div class="case-title">VPS Optimization</div>
@@ -1501,7 +1549,7 @@
 
       <div class="case-card reveal reveal-delay-1">
         <div class="case-img">
-          <img class="site-img" data-seed="cloudynq-case2" src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=560&h=336&dpr=1" alt="Website launch" width="560" height="336" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-case2" src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=560&h=336&dpr=1" alt="Website launch" width="560" height="336" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="case-tag">Case Study</div>
         <div class="case-title">Business Website Launch</div>
@@ -1515,7 +1563,7 @@
 
       <div class="case-card reveal reveal-delay-2">
         <div class="case-img">
-          <img class="site-img" data-seed="cloudynq-case3" src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=560&h=336&dpr=1" alt="Monitoring setup" width="560" height="336" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <img class="site-img" data-seed="cloudsynq-case3" src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=560&h=336&dpr=1" alt="Monitoring setup" width="560" height="336" loading="lazy" decoding="async" referrerpolicy="no-referrer">
         </div>
         <div class="case-tag">Case Study</div>
         <div class="case-title">Monitoring &amp; Alerts</div>
@@ -1539,7 +1587,7 @@
         Schedule a<br>consultation
       </h2>
       <p style="font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 32px;">
-        Discuss your requirements with Cloudynq. We respond within one business day with next steps and a scope outline.
+        Discuss your requirements with Cloudsynq. We respond within one business day with next steps and a scope outline.
       </p>
 
       <div class="contact-detail">
@@ -1556,7 +1604,7 @@
 
       <div class="contact-detail">
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Sahil · Founder, Cloudynq</span>
+        <span>Sahil · Founder, Cloudsynq</span>
       </div>
 
       <div class="contact-detail">
@@ -1565,7 +1613,7 @@
       </div>
 
       <div class="contact-img">
-        <img class="site-img" data-seed="cloudynq-contact" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=640&h=360&dpr=1" alt="Cloudynq workspace" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        <img class="site-img" data-seed="cloudsynq-contact" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=640&h=360&dpr=1" alt="Cloudsynq workspace" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       </div>
     </div>
 
@@ -1617,7 +1665,7 @@
           <div class="check-icon">
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <p>Message received! 🎉</p>
+          <p>Message received!</p>
           <small id="successDetail"></small>
         </div>
       </div>
@@ -1632,7 +1680,7 @@
     <div class="stack-icons">
 
       <div class="tech-item">
-        <img src="https://d1.awsstatic.com/webteam/marketing-content/aws-logo/powered-by-aws-white.7f716a82b9b54f72ba25bce6e54f6660c97f7073.png" alt="AWS" width="62" height="36" loading="lazy">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg" alt="AWS" width="36" height="36" loading="lazy">
         <span class="tech-name">AWS</span>
       </div>
 
@@ -1713,7 +1761,7 @@
         <circle cx="11" cy="29" r="1.8" fill="#BFDBFE"/>
       </svg>
       <span>
-        <span class="logo-word">cloud<em>ynq</em></span>
+        <span class="logo-word">cloud<em>synq</em></span>
         <span class="logo-tagline">Enterprise Infrastructure</span>
       </span>
     </a>
@@ -1725,7 +1773,7 @@
       <a href="#case-studies">Case Studies</a>
       <a href="#contact">Contact</a>
     </div>
-    <span>© 2026 Cloudynq · Noida · sahila7mp@gmail.com · +91 81304 71748</span>
+    <span>© 2026 Cloudsynq · Noida · sahila7mp@gmail.com · +91 81304 71748</span>
   </div>
 </footer>
 
@@ -1735,10 +1783,10 @@
     img.addEventListener('error', function retry() {
       const w = this.getAttribute('width') || 600;
       const h = this.getAttribute('height') || 340;
-      const seed = this.dataset.seed || 'cloudynq';
+      const seed = this.dataset.seed || 'cloudsynq';
       if (!this.dataset.retried) {
         this.dataset.retried = '1';
-        this.src = `https://placehold.co/${w}x${h}/DBEAFE/1E3A8A?text=Cloudynq+Infrastructure`;
+        this.src = `https://placehold.co/${w}x${h}/DBEAFE/1E3A8A?text=Cloudsynq+Infrastructure`;
       } else {
         this.style.display = 'none';
         this.parentElement.style.background = 'linear-gradient(135deg, #DBEAFE 0%, #EFF6FF 100%)';
@@ -1793,35 +1841,30 @@
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    // ── HOW FORM DATA REACHES YOU ──
-    // 
-    // OPTION A (Easiest — No backend needed):
-    // Sign up at formspree.io → get your form ID → replace this fetch URL:
-    //
-    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ name, email, phone, service, message: msg })
-    // })
-    //
-    // OPTION B (Backend — Flask/Node.js):
-    // fetch('/api/contact', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ name, email, phone, service, message: msg })
-    // })
-    //
-    // OPTION C (EmailJS — Free 200 emails/month):
-    // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', { name, email, phone, service, msg })
-    //
-    // For now — simulating success after 1 second:
-    setTimeout(() => {
-      console.log('FORM DATA:', { name, email, phone, service, message: msg });
-      btn.style.display = 'none';
-      const detail = document.getElementById('successDetail');
-      detail.textContent = `We'll reach out to ${email}${phone ? ' or ' + phone : ''} within 24 hours.`;
-      document.getElementById('successMsg').style.display = 'block';
-    }, 1000);
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone, service, message: msg }),
+    })
+      .then(res => res.json().then(d => ({ ok: res.ok, data: d })))
+      .then(({ ok, data }) => {
+        if (!ok) {
+          const errMsg = data?.fields ? Object.values(data.fields).join(' ') : (data?.error || 'Something went wrong.');
+          btn.textContent = 'Send Message →';
+          btn.disabled = false;
+          alert(errMsg);
+          return;
+        }
+        btn.style.display = 'none';
+        const detail = document.getElementById('successDetail');
+        detail.textContent = data.detail || `We'll reach out to ${email}${phone ? ' or ' + phone : ''} within 24 hours.`;
+        document.getElementById('successMsg').style.display = 'block';
+      })
+      .catch(() => {
+        btn.textContent = 'Send Message →';
+        btn.disabled = false;
+        alert('Could not reach the server. Please try again later.');
+      });
   }
 
   // Clear errors on input
@@ -1830,6 +1873,18 @@
     const errId = 'err-' + id.replace('f-', '');
     el.addEventListener('input', () => showError(errId, false));
     el.addEventListener('change', () => showError(errId, false));
+  });
+
+  // Mobile menu toggle
+  document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+    this.classList.toggle('open');
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('.menu-toggle')?.classList.remove('open');
+      document.querySelector('.nav-links')?.classList.remove('open');
+    });
   });
 
   // Smooth scroll for nav links
